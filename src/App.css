@@ -1,0 +1,167 @@
+/* Global styles */
+.App {
+  background-color: #dadef4;
+  height: 100vh;
+}
+
+body {
+  background-color: #dadef4;
+  font-family: 'ROBOTO', sans-serif;
+}
+
+/* Header styles */
+.header {
+  background-color: #6a6fb1;
+  display: flex;
+  justify-content: center;
+  height: 3.5rem;
+}
+
+.header__content {
+  color: #333333;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__content--title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  align-items: center;
+}
+
+/* Main content styles */
+.main {
+  display: grid;
+  place-items: center;
+  padding: 1rem 0;
+}
+
+.main__content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Form and input styles */
+.main__content--form,
+.main__content--input {
+  width: 100%;
+  max-width: 1200px;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.main__content--input {
+  padding: 1rem 1.5rem;
+  border: none;
+}
+
+.main__content--inputSend {
+  color: #6068d3;
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.main__content--inputSend:hover {
+  opacity: 0.5;
+}
+
+.inputControl {
+  position: relative;
+}
+
+/* Todo list styles */
+.main__todoList {
+  padding: 1rem;
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Todo item styles */
+.todoItem {
+  background-color: #ffffff;
+  display: flex;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+  color: #333333;
+}
+
+.task--done {
+  margin-right: auto !important;
+}
+
+.task--check {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.2rem;
+}
+
+.task--delete,
+.task--edit {
+  cursor: pointer;
+  color: #6a6fb1;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.task--delete:hover {
+  opacity: 1;
+  color: red;
+}
+
+.task--edit:hover {
+  opacity: 1;
+  color: green;
+}
+
+.task--editInput {
+  margin-right: auto;
+  width: 100%;
+}
+
+.task--undone {
+  margin-right: auto !important;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 1200px) {
+  .header__content {
+    padding: 0 2rem;
+  }
+  
+  .header__content--title {
+    font-size: 1.5rem;
+  }
+  
+  .main__content--form {
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .main__todoList {
+    padding: 0;
+  }
+}

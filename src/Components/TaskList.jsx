@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setTodos } from "../redux/actions";
 import TodoItem from "./TodoItem";
+import { motion, AnimatePresence } from 'framer-motion'; // Import Framer Motion
 
 // TaskList component to display the list of todos
 const TaskList = () => {
@@ -26,13 +27,23 @@ const TaskList = () => {
   }, [todos]);
 
   return (
-    // Render an unordered list of todos
-    <ul className='main__todoList'>
-      {/* Map through todos and render a TodoItem for each */}
-      {todos.map((task) => (
-        <TodoItem key={task.id} task={task} />
-      ))}
-    </ul>
+    // Render an animated unordered list of todos
+    <motion.ul className='main__todoList'>
+      <AnimatePresence>
+        {/* Map through todos and render a TodoItem for each */}
+        {todos.map((task, index) => (
+          <motion.li
+            key={task.id}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <TodoItem task={task} />
+          </motion.li>
+        ))}
+      </AnimatePresence>
+    </motion.ul>
   );
 };
 

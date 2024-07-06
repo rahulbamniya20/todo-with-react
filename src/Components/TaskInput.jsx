@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { addTodo } from '../redux/actions';
 import { v4 as uuid } from 'uuid';
 
+import { motion, stagger } from "framer-motion"
+
 // TaskInput component for adding new todos
 const TaskInput = () => {
   // State to manage the current todo input
@@ -38,7 +40,7 @@ const TaskInput = () => {
 
   return (
     <form className='main__content--form' onSubmit={handleSubmit}>
-      <div className='inputControl'>
+      <motion.div layout className='inputControl'>
         {/* Input field for todo text */}
         <input
           className='main__content--input'
@@ -52,7 +54,7 @@ const TaskInput = () => {
           className='main__content--inputSend bx bxs-plus-square'
           onClick={handleSubmit}
         ></i>
-      </div>
+      </motion.div>
     </form>
   );
 };

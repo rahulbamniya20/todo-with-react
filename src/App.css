@@ -94,6 +94,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  list-style: none;
 }
 
 /* Todo item styles */
